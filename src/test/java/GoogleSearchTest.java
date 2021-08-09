@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class GoogleSearchTest {
@@ -27,8 +29,44 @@ public class GoogleSearchTest {
         System.out.println(s1);
         System.out.println(s2);
 
+        Thread.sleep(3000); // нужно добавить throws InterruptedException или обернуть в трай кэч
+        driver.quit();
 
-        Thread.sleep(10000); // нужно добавить throws InterruptedException или обернуть в трай кэч
+    }
+
+    @Test
+    public void Test2() throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        String link = "https://www.google.com/";
+        String helloWorld = "Привет мир";
+        String h3Content = "";
+        boolean result = true;
+
+        driver.get(link);
+        driver.findElement(By.name("q")).sendKeys(helloWorld, Keys.ENTER);
+
+        List<WebElement> links = driver.findElements(By.tagName("h3"));
+        Iterator<WebElement> it = links.iterator();
+
+        int i = 0;
+        while(it.hasNext()) {
+
+            h3Content = it.next().getText();
+            System.out.println(h3Content);
+
+            if (h3Content.contains(helloWorld)) {
+                result = true;
+            } else {
+                result = false;
+            }
+        }
+
+        System.out.println(result);
+
+        Assert.assertFalse(result);
+
+        Thread.sleep(3000);
         driver.quit();
 
     }
