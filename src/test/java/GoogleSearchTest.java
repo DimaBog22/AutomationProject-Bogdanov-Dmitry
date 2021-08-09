@@ -50,10 +50,10 @@ public class GoogleSearchTest {
         Iterator<WebElement> it = links.iterator();
 
         int i = 0;
-        while(it.hasNext()) {
+        while (it.hasNext()) {
 
             h3Content = it.next().getText();
-            System.out.println(h3Content);
+//            System.out.println(h3Content);
 
             if (h3Content.contains(helloWorld)) {
                 result = true;
@@ -63,8 +63,32 @@ public class GoogleSearchTest {
         }
 
         System.out.println(result);
+        Assert.assertFalse(result); // first check
 
-        Assert.assertFalse(result);
+        String inputContent = driver.findElement(By.name("q")).getAttribute("value");
+
+        Assert.assertEquals(inputContent, helloWorld); // second check
+
+        Thread.sleep(3000);
+        driver.quit();
+
+    }
+
+    @Test
+    public void Test3() throws InterruptedException {
+
+        WebDriver driver = new ChromeDriver();
+        String link = "https://www.google.com/";
+        String content = "//";
+        String expectedResult = "По запросу // ничего не найдено. ";
+
+        driver.get(link);
+        driver.findElement(By.name("q")).sendKeys(content, Keys.ENTER);
+
+        String actualResult = driver.findElement(By.xpath("//p[1]")).getText();
+
+        System.out.println(actualResult);
+        Assert.assertEquals(actualResult, expectedResult);
 
         Thread.sleep(3000);
         driver.quit();
