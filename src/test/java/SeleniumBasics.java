@@ -2,11 +2,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SeleniumBasics {
 
@@ -17,13 +18,14 @@ public class SeleniumBasics {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        String link = "https://calc.by/weight-and-calories/body-mass-index-calculator.html";
-        driver.get(link);
 
     }
 
     @Test(priority = 1)
-    public void Test1() throws InterruptedException {
+    public void Test1() {
+
+        String link = "https://calc.by/weight-and-calories/body-mass-index-calculator.html";
+        driver.get(link);
 
         WebElement heigth = driver.findElement(By.id("bmiVar1"));
         WebElement weight = driver.findElement(By.id("bmiVar2"));
@@ -32,7 +34,6 @@ public class SeleniumBasics {
         heigth.sendKeys("183");
         weight.sendKeys("58");
         btn.click();
-        Thread.sleep(3000);
 
         WebElement answerNumber = driver.findElement(By.id("AnswerBMI")); // 17.32
         WebElement answerString = driver.findElement(By.id("AnswerBMI1")); // Недостаточной массе тела
@@ -42,9 +43,61 @@ public class SeleniumBasics {
 
     }
 
+    @Test
+    public void Test2() throws InterruptedException {
+
+        String link = "https://calc.by/building-calculators/laminate.html";
+        driver.get(link);
+
+        // working with <select></select>
+        WebElement selector = driver.findElement(By.id("laying_method_laminate"));
+        Select select = new Select(selector);
+        select.selectByIndex(2); // с использованием отрезанного элемента
+
+        WebElement lengthRoom = driver.findElement(By.id("ln_room_id"));
+        WebElement widthRoom = driver.findElement(By.id("wd_room_id"));
+        WebElement lengthLaminat = driver.findElement(By.id("ln_lam_id"));
+        WebElement widthLaminat = driver.findElement(By.id("wd_lam_id"));
+        WebElement numberLaminat = driver.findElement(By.id("n_packing"));
+        WebElement minLengthSegment = driver.findElement(By.id("min_length_segment_id"));
+        WebElement intendWalls = driver.findElement(By.id("indent_walls_id"));
+        WebElement radioBtn = driver.findElement(By.id("direction-laminate-id1"));
+        WebElement calcBtn = driver.findElement(By.className("calc-btn"));
+
+        // clear fields
+        lengthRoom.clear();
+        widthRoom.clear();
+        lengthLaminat.clear();
+        widthLaminat.clear();
+
+        // set values
+        lengthRoom.sendKeys("500");
+        widthRoom.sendKeys("400");
+        lengthLaminat.sendKeys("2000");
+        widthLaminat.sendKeys("200");
+        radioBtn.click();
+        calcBtn.click();
+
+        Thread.sleep(2000);
+
+        List<String> textList = new ArrayList<String>();
+
+        // lambda (add values to List)
+        driver.findElements(By.xpath("//*[@class='calc-result']//div")).forEach((data) -> {
+            textList.add(data.getText());
+        });
+
+        Assert.assertTrue(textList.contains("Требуемое количество досок ламината: 53"));
+        Assert.assertTrue(textList.contains("Количество упаковок ламината: 7"));
+
+    }
+
     @AfterTest
-    public void postcondition() {
+    public void postcondition() throws InterruptedException {
+
+        Thread.sleep(3000);
         driver.quit();
+
     }
 
 }
