@@ -58,11 +58,11 @@ public class SeleniumBasics {
         select.selectByIndex(2); // с использованием отрезанного элемента
 
 
-        WebElement radioBtn = driver.findElement(By.id("direction-laminate-id1"));
+
         // how to scroll the page to radio btn
         // without this step we can not see radioBtn because of adverts
         Actions actions = new Actions(driver);
-        actions.moveToElement(radioBtn).perform();
+        actions.moveToElement(driver.findElement(By.id("area_room"))).perform();
 
         WebElement lengthRoom = driver.findElement(By.id("ln_room_id"));
         WebElement widthRoom = driver.findElement(By.id("wd_room_id"));
@@ -71,6 +71,7 @@ public class SeleniumBasics {
         WebElement numberLaminat = driver.findElement(By.id("n_packing"));
         WebElement minLengthSegment = driver.findElement(By.id("min_length_segment_id"));
         WebElement intendWalls = driver.findElement(By.id("indent_walls_id"));
+        WebElement radioBtn = driver.findElement(By.id("direction-laminate-id1"));
         WebElement calcBtn = driver.findElement(By.className("calc-btn"));
 
         // clear fields
