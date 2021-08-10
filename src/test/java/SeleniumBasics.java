@@ -1,11 +1,14 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,6 +57,13 @@ public class SeleniumBasics {
         Select select = new Select(selector);
         select.selectByIndex(2); // с использованием отрезанного элемента
 
+
+        WebElement radioBtn = driver.findElement(By.id("direction-laminate-id1"));
+        // how to scroll the page to radio btn
+        // without this step we can not see radioBtn because of adverts
+        Actions actions = new Actions(driver);
+        actions.moveToElement(radioBtn).perform();
+
         WebElement lengthRoom = driver.findElement(By.id("ln_room_id"));
         WebElement widthRoom = driver.findElement(By.id("wd_room_id"));
         WebElement lengthLaminat = driver.findElement(By.id("ln_lam_id"));
@@ -61,7 +71,6 @@ public class SeleniumBasics {
         WebElement numberLaminat = driver.findElement(By.id("n_packing"));
         WebElement minLengthSegment = driver.findElement(By.id("min_length_segment_id"));
         WebElement intendWalls = driver.findElement(By.id("indent_walls_id"));
-        WebElement radioBtn = driver.findElement(By.id("direction-laminate-id1"));
         WebElement calcBtn = driver.findElement(By.className("calc-btn"));
 
         // clear fields
