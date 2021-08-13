@@ -39,7 +39,7 @@ public class GoogleSearchTest {
 
         WebDriver driver = new ChromeDriver();
         String link = "https://www.google.com/";
-        String helloWorld = "Привет мир";
+        String helloWorld = "Hello world";
         String h3Content = "";
         boolean result = true;
 
