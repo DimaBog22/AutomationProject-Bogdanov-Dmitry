@@ -2,9 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -14,7 +12,7 @@ public class Task_5_2 {
 
     WebDriver driver = null;
 
-    @BeforeTest
+    @BeforeMethod
     public void preconditions() {
 
         driver = new ChromeDriver();
@@ -61,10 +59,18 @@ public class Task_5_2 {
     @Test
     public void test2() {
 
+        String inputData = "//";
+        WebElement searchInput = driver.findElement(By.name("q"));
+        searchInput.sendKeys(inputData, Keys.ENTER);
+
+        String actualResult = driver.findElement(By.xpath("//p[1]")).getText();
+        String expectedResult = "По запросу // ничего не найдено. ";
+        System.out.println(actualResult);
+        Assert.assertEquals(actualResult, expectedResult);
 
     }
 
-    @AfterTest
+    @AfterMethod
     public void postconditions() {
         driver.close();
     }
