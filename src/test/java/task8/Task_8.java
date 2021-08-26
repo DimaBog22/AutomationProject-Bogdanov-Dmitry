@@ -11,6 +11,9 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Task_8 {
@@ -19,24 +22,19 @@ public class Task_8 {
     String link = "D:\\TMS automation project\\AutomationProject-Bogdanov-Dmitry\\src\\test\\java\\task8\\contacts.html";
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(link);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
 
     @Test
-    public void test1() throws InterruptedException{
+    public void test1() throws InterruptedException {
 
         // web elements
-        WebElement vkLink = driver.findElement(By.linkText("VK")); // <a>
-        WebElement addres = driver.findElement(By.cssSelector(".address")); // <p>
-
         WebElement submitBtn = driver.findElement(By.cssSelector("input[type='submit']"));
-//        System.out.println(submitBtn.getAttribute("value")); // тк отправить - не текст, а значение атрибута value
         WebElement select = driver.findElement(By.tagName("select"));
         Select optionRegion = new Select(select);
         WebElement deliveryсheckbox = driver.findElement(By.cssSelector("input[type='checkbox']"));
@@ -55,13 +53,48 @@ public class Task_8 {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[alt='Спецтехника из Японии']")));
         WebElement img = driver.findElement(By.cssSelector("[alt='Спецтехника из Японии']"));
-        // verification
+        // working with the table
+        List<String> textList = new ArrayList<String>();
+        // lambda (add values to List)
+        driver.findElements(By.cssSelector(".forArrayList")).forEach((data) -> {
+            textList.add(data.getText());
+        });
+        for (String item : textList) {
+            System.out.println(item);
+        }
+        // verifications
+        Thread.sleep(3000);
         Assert.assertTrue(img.isDisplayed());
 
     }
 
+    @Test
+    public void test2() throws InterruptedException {
+
+        // web elements
+        WebElement addres = driver.findElement(By.cssSelector(".address")); // <p>
+        System.out.println(addres.getText());
+        // verifications
+        Thread.sleep(3000);
+        Assert.assertEquals(addres.getText(), "Минская область, г.Раков");
+
+    }
+
+    @Test
+    public void test3() throws InterruptedException {
+
+        // web elements
+        WebElement vkLink = driver.findElement(By.linkText("VK")); // <a>
+        // verifications
+        vkLink.click();
+        Thread.sleep(3000);
+        WebElement logoOnVK = driver.findElement(By.cssSelector("[aria-label='На главную']"));
+        Assert.assertTrue(logoOnVK.isDisplayed());
+
+    }
+
     @AfterTest
-    public void postconditions(){
+    public void postconditions() {
         driver.close();
     }
 
