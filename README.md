@@ -1,2 +1,2 @@
-# AutomationProject-Bogdanov-Dmitry-
+# AutomationProject-Bogdanov-Dmitry
 Automation Project (Java)
