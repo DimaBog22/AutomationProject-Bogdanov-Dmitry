@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 /*
     Patten Singleton
- */
+*/
 
 public class DriverCreation {
     private static WebDriver driver;

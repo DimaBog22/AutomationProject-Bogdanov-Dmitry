@@ -11,6 +11,10 @@ public class LoginPage extends BasePage {
     private By loginBtn = By.cssSelector("[data-test=login-button]");
     private By errorTxt = By.cssSelector("[data-test=error]");
 
+/*
+    Patten Fluent / Chain of Invocations
+*/
+
     public LoginPage verifyLoginPage() {
         isDisplayed(username, password, loginBtn);
         return this;
