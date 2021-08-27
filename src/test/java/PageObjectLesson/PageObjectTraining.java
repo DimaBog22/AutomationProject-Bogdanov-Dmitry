@@ -6,7 +6,7 @@ import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class PageObjectTrain extends BaseTest {
+public class PageObjectTraining extends BaseTest {
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
 
