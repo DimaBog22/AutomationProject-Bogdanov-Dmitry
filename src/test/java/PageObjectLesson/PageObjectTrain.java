@@ -1,7 +1,7 @@
 package PageObjectLesson;
 
-import PageObject.LoginPage;
-import PageObject.ProductPage;
+import PageObjects.LoginPage;
+import PageObjects.ProductPage;
 import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
