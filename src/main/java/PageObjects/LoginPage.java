@@ -1,42 +1,50 @@
-package PageObjects;
+package PageObject;
 
-import driver.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import static driver.DriverCreation.getDriver;
 
 public class LoginPage extends BasePage {
-    private By userName = By.cssSelector("[data-test=username]");
+    private By username = By.cssSelector("[data-test=username]");
     private By password = By.cssSelector("[data-test=password]");
     private By loginBtn = By.cssSelector("[data-test=login-button]");
+    private By errorTxt = By.cssSelector("[data-test=error]");
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
+    public LoginPage verifyLoginPage() {
+        isDisplayed(username, password, loginBtn);
+        return this;
     }
 
     public LoginPage openPage() {
-        driver.get("https://www.saucedemo.com/");
+        open("https://www.saucedemo.com/");
         return this;
     }
 
-    public LoginPage fillAuthFields(String userName, String password) {
-        driver.findElement(this.userName).sendKeys(userName);
-        driver.findElement(this.password).sendKeys(password);
-        driver.findElement(this.loginBtn).click();
-        return this;
-    }
-
-    public LoginPage clickLoginBtn() {
-        super.click(loginBtn);
-        return this;
-    }
-
-    public LoginPage enterLogin(String userName) {
-        super.enter(this.userName, userName);
+    public LoginPage enterUsername(String username) {
+        enter(this.username, username);
         return this;
     }
 
     public LoginPage enterPassword(String password) {
-        super.enter(this.password, password);
+        enter(this.password, password);
+        return this;
+    }
+
+    public LoginPage clickLogin() {
+        click(this.loginBtn);
+        return this;
+    }
+
+    public LoginPage loginToApplication(String username, String password) {
+        enter(this.username, username);
+        enter(this.password, password);
+        click(this.loginBtn);
+        return this;
+    }
+
+    public LoginPage checkErrorText(String expectedText) {
+        Assert.assertEquals(getElementText(errorTxt), expectedText);
         return this;
     }
 }

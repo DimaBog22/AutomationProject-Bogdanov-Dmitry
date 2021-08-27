@@ -1,21 +1,21 @@
 package driver;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
-public abstract class BasePage {
-    protected WebDriver driver;
+import static driver.DriverCreation.*;
 
-    protected BasePage(WebDriver driver) {
-        this.driver = driver;
+public class BaseTest {
+    public static WebDriver driver;
+
+    @BeforeTest
+    public void setupDriver() {
+        driver = getDriver();
     }
 
-    protected void click(By element) {
-        driver.findElement(element).click();
-    }
-
-    protected void enter(By element, CharSequence... charSequences) {
-        driver.findElement(element).clear();
-        driver.findElement(element).sendKeys(charSequences);
+    @AfterTest
+    public void closeDriver() {
+        driver.quit();
     }
 }

@@ -1,47 +1,33 @@
 package PageObjectLesson;
 
-import PageFactory.LoginPage;
-import composition.Person;
-import driver.DriverExecutor;
-import inheritance.IHand;
-import inheritance.IPerson;
-import org.testng.annotations.BeforeTest;
+import PageObject.LoginPage;
+import PageObject.ProductPage;
+import driver.BaseTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class PageObjectTrain extends DriverExecutor {
-    PageObjects.LoginPage loginPage;
-    LoginPage loginPageAnnotations;
+public class PageObjectTrain extends BaseTest {
+    LoginPage loginPage = new LoginPage();
+    ProductPage productPage = new ProductPage();
 
-    @BeforeTest
-    public void preconditions() {
-        loginPage = new PageObjects.LoginPage(driver);
-        loginPageAnnotations = new LoginPage(driver);
+    @BeforeMethod
+    public void precondition() {
+        loginPage.openPage();
     }
 
-    //@Test
-    public void test1() {
-        loginPage
-                .openPage()
-                .clickLoginBtn()
-                .fillAuthFields("123", "123")
-                .enterLogin("123")
-                .enterPassword("123")
-                .clickLoginBtn();
+    @Test(priority = 1)
+    public void loginToApplicationStandard_Test() {
+        loginPage.openPage()
+                .verifyLoginPage()
+                .loginToApplication("standard_user", "secret_sauce");
+        productPage.verifyProductPage();
     }
 
-    // @Test
-    public void test2() {
-        loginPageAnnotations
-                .openPage()
-                .fillAuthFields("123", "123");
-    }
-
-    @Test
-    public void test3 () {
-        Person person = new Person();
-        System.out.println(person.getFingers());
-        IPerson iPerson = new IPerson();
-        IHand ihand = new IHand();
-        ihand.getName();
+    @Test(priority = 2)
+    public void loginToApplicationProblem_Test() {
+        loginPage.openPage()
+                .verifyLoginPage()
+                .loginToApplication("problem_user", "secret_sauce");
+        productPage.verifyProductPage();
     }
 }
