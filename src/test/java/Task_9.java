@@ -15,6 +15,19 @@ public class Task_9 extends BaseTest {
     }
 
     @Test
+    public void standardUserLogin(){
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication("standard_user", "secret_sauce");
+
+        productPage.
+                verifyProductPage()
+                .checkTitle();
+
+    }
+
+    @Test
     public void standardLogin(){
 
         loginPage.
