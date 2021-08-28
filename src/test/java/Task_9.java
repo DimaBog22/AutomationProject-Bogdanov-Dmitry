@@ -1,6 +1,7 @@
 import PageObjects.LoginPage;
 import PageObjects.ProductPage;
 import driver.BaseTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -9,7 +10,7 @@ public class Task_9 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
 
-    @BeforeTest
+    @BeforeMethod
     public void preconditions(){
         loginPage.openPage();
     }
@@ -28,11 +29,11 @@ public class Task_9 extends BaseTest {
     }
 
     @Test
-    public void standardLogin(){
+    public void problemUserLogin(){
 
         loginPage.
                 verifyLoginPage()
-                .loginToApplication("standard_user", "secret_sauce");
+                .loginToApplication("problem_user", "secret_sauce");
 
         productPage.
                 verifyProductPage()
