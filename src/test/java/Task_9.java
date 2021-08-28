@@ -15,7 +15,7 @@ public class Task_9 extends BaseTest {
         loginPage.openPage();
     }
 
-    @Test
+//    @Test
     public void standardUserLogin(){
 
         loginPage.
@@ -27,13 +27,24 @@ public class Task_9 extends BaseTest {
                 .checkTitle();
 
     }
-
-    @Test
+//    @Test
     public void problemUserLogin(){
 
         loginPage.
                 verifyLoginPage()
                 .loginToApplication("problem_user", "secret_sauce");
+
+        productPage.
+                verifyProductPage()
+                .checkTitle();
+
+    }
+    @Test
+    public void performanceUserLogin(){
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication("performance_glitch_user", "secret_sauce");
 
         productPage.
                 verifyProductPage()
