@@ -46,7 +46,7 @@ public class Task_9 extends BaseTest {
                 .checkTitle();
 
     }
-    @Test
+//    @Test
     public void performanceUserLogin(){
 
         loginPage.
@@ -56,6 +56,26 @@ public class Task_9 extends BaseTest {
         productPage.
                 verifyProductPage()
                 .checkTitle();
+
+    }
+    @Test
+    public void verifyUsernameIsRequired(){
+
+        loginPage.
+                verifyLoginPage()
+                .enterPassword(password)
+                .clickLogin()
+                .checkErrorText("Epic sadface: Username is required");
+
+    }
+    @Test
+    public void verifyPasswordIsRequired(){
+
+        loginPage.
+                verifyLoginPage()
+                .enterUsername(standard)
+                .clickLogin()
+                .checkErrorText("Epic sadface: Password is required");
 
     }
 
