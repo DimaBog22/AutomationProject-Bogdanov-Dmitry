@@ -16,6 +16,8 @@ public class Task_9 extends BaseTest {
     String problem = "problem_user";
     String performance = "performance_glitch_user";
     String password = "secret_sauce";
+    String usernameIsRequired = "Epic sadface: Username is required";
+    String passwordIsRequired = "Epic sadface: Password is required";
 
     @BeforeMethod
     public void preconditions(){
@@ -65,7 +67,7 @@ public class Task_9 extends BaseTest {
                 verifyLoginPage()
                 .enterPassword(password)
                 .clickLogin()
-                .checkErrorText("Epic sadface: Username is required");
+                .checkErrorText(usernameIsRequired);
 
     }
     @Test
@@ -75,7 +77,7 @@ public class Task_9 extends BaseTest {
                 verifyLoginPage()
                 .enterUsername(standard)
                 .clickLogin()
-                .checkErrorText("Epic sadface: Password is required");
+                .checkErrorText(passwordIsRequired);
 
     }
 
