@@ -7,8 +7,15 @@ import org.testng.annotations.Test;
 
 public class Task_9 extends BaseTest {
 
+    // pages
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
+
+    // creds
+    String standard = "standard_user";
+    String problem = "problem_user";
+    String performance = "performance_glitch_user";
+    String password = "secret_sauce";
 
     @BeforeMethod
     public void preconditions(){
@@ -20,7 +27,7 @@ public class Task_9 extends BaseTest {
 
         loginPage.
                 verifyLoginPage()
-                .loginToApplication("standard_user", "secret_sauce");
+                .loginToApplication(standard, password);
 
         productPage.
                 verifyProductPage()
@@ -32,7 +39,7 @@ public class Task_9 extends BaseTest {
 
         loginPage.
                 verifyLoginPage()
-                .loginToApplication("problem_user", "secret_sauce");
+                .loginToApplication(problem, password);
 
         productPage.
                 verifyProductPage()
@@ -44,7 +51,7 @@ public class Task_9 extends BaseTest {
 
         loginPage.
                 verifyLoginPage()
-                .loginToApplication("performance_glitch_user", "secret_sauce");
+                .loginToApplication(performance, password);
 
         productPage.
                 verifyProductPage()
