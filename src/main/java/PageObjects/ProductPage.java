@@ -13,6 +13,7 @@ public class ProductPage extends BasePage {
     private By filter = By.tagName("select");
     private By addBtn = By.id("add-to-cart-sauce-labs-backpack");
     private By cartBadge = By.cssSelector(".shopping_cart_badge");
+    private By productItem = By.id("item_4_img_link");
 
     public ProductPage verifyProductPage() {
 
@@ -46,10 +47,18 @@ public class ProductPage extends BasePage {
 
     }
 
-    public ProductPage isCartBadgeEmpty() {
+    public ProductPage isCartBadgeEmpty() throws InterruptedException {
 
         isElementPresented(cartBadge);
+        Thread.sleep(2000);
         System.out.println("item is deleted");
+        return this;
+
+    }
+
+    public ProductPage openItemPage() {
+
+        click(productItem);
         return this;
 
     }

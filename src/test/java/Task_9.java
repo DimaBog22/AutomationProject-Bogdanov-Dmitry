@@ -1,4 +1,5 @@
 import PageObjects.CartPage;
+import PageObjects.ItemPage;
 import PageObjects.LoginPage;
 import PageObjects.ProductPage;
 import driver.BaseTest;
@@ -11,6 +12,7 @@ public class Task_9 extends BaseTest {
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
     CartPage cartPage = new CartPage();
+    ItemPage itemPage = new ItemPage();
 
     // creds
     String standard = "standard_user";
@@ -104,7 +106,7 @@ public class Task_9 extends BaseTest {
                 .quantityIsOne();
 
     }
-    @Test
+//    @Test
     public void removeItemFromCart() throws InterruptedException {
 
         loginPage.
@@ -122,6 +124,31 @@ public class Task_9 extends BaseTest {
                 .checkTitle()
                 .quantityIsOne()
                 .removeFromCart();
+
+        productPage.
+                isCartBadgeEmpty();
+
+    }
+//    @Test
+    public void removeItemFromItemPage() throws InterruptedException {
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication(standard, password);
+
+        productPage.
+                verifyProductPage()
+                .addToCart()
+                .isCartBadgeEqualsOne();
+
+        productPage.
+                openItemPage();
+
+        Thread.sleep(2000); // to check cartBadge is still 1
+
+        itemPage.
+                verifyItemPage()
+                .removeItemFromItemPage();
 
         productPage.
                 isCartBadgeEmpty();
