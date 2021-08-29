@@ -53,4 +53,11 @@ public class CartPage extends BasePage {
 
     }
 
+    public CartPage goToCheckOut() {
+
+        click(checkoutBtn);
+        return this;
+
+    }
+
 }

@@ -1,7 +1,4 @@
-import PageObjects.CartPage;
-import PageObjects.ItemPage;
-import PageObjects.LoginPage;
-import PageObjects.ProductPage;
+import PageObjects.*;
 import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,6 +10,9 @@ public class Task_9 extends BaseTest {
     ProductPage productPage = new ProductPage();
     CartPage cartPage = new CartPage();
     ItemPage itemPage = new ItemPage();
+    CheckoutPage checkoutPage = new CheckoutPage();
+    CheckoutOverviewPage checkoutOverviewPage = new CheckoutOverviewPage();
+    CheckoutCompletePage checkoutCompletePage = new CheckoutCompletePage();
 
     // creds
     String standard = "standard_user";
@@ -152,6 +152,39 @@ public class Task_9 extends BaseTest {
 
         productPage.
                 isCartBadgeEmpty();
+
+    }
+    @Test
+    public void makePayment() throws InterruptedException {
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication(standard, password);
+
+        productPage.
+                verifyProductPage()
+                .addToCart()
+                .isCartBadgeEqualsOne();
+
+        cartPage.
+                openCartPage()
+                .verifyCartPage()
+                .checkTitle()
+                .quantityIsOne()
+                .goToCheckOut();
+
+        checkoutPage.
+                verifyCheckoutPage()
+                .checkTitle()
+                .fillForm("Dmitry", "Bogdanov", "220113");
+
+        checkoutOverviewPage.
+                verifyCheckoutOverviewPage()
+                .finishPayment();
+
+        checkoutCompletePage.
+                verifyCheckoutCompletePage()
+                .getProofOfPayment();
 
     }
 
