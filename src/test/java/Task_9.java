@@ -85,8 +85,7 @@ public class Task_9 extends BaseTest {
                 .checkErrorText(passwordIsRequired);
 
     }
-
-    @Test
+//    @Test
     public void addItemToCart() throws InterruptedException {
 
         loginPage.
@@ -103,6 +102,29 @@ public class Task_9 extends BaseTest {
                 .verifyCartPage()
                 .checkTitle()
                 .quantityIsOne();
+
+    }
+    @Test
+    public void removeItemFromCart() throws InterruptedException {
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication(standard, password);
+
+        productPage.
+                verifyProductPage()
+                .addToCart()
+                .isCartBadgeEqualsOne();
+
+        cartPage.
+                openCartPage()
+                .verifyCartPage()
+                .checkTitle()
+                .quantityIsOne()
+                .removeFromCart();
+
+        productPage.
+                isCartBadgeEmpty();
 
     }
 

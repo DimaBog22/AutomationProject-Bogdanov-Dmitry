@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
 import static driver.DriverCreation.getDriver;
@@ -32,6 +33,19 @@ public class BasePage {
         for (By element : elements) {
             Assert.assertTrue(getDriver().findElement(element).isDisplayed(), "Element :: " + elements + " is not exist.");
         }
+    }
+
+    protected Boolean isElementPresented(By element){
+
+        Boolean elementCondition = false;
+        try{
+            elementCondition = getDriver().findElement(element).isDisplayed();
+        }
+        catch (NoSuchElementException e){
+            return  elementCondition;
+        }
+        return elementCondition;
+
     }
 
 }

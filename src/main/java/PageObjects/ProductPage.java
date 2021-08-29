@@ -5,6 +5,8 @@ import org.testng.Assert;
 
 import java.util.Locale;
 
+import static driver.DriverCreation.getDriver;
+
 public class ProductPage extends BasePage {
     private By title = By.cssSelector("[class=title]");
     private By logo = By.cssSelector("[class=app_logo]");
@@ -40,6 +42,13 @@ public class ProductPage extends BasePage {
         Assert.assertEquals(actualResult, "1");
         System.out.println(actualResult);
         Thread.sleep(3000);
+        return this;
+
+    }
+    public ProductPage isCartBadgeEmpty() {
+
+        isElementPresented(cartBadge);
+        System.out.println("item is deleted");
         return this;
 
     }

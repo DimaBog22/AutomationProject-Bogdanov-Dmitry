@@ -46,4 +46,11 @@ public class CartPage extends BasePage {
 
     }
 
+    public CartPage removeFromCart() {
+
+        click(removeBtn);
+        return this;
+
+    }
+
 }
