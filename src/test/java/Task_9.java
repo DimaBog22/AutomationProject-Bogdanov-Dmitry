@@ -1,8 +1,8 @@
+import PageObjects.CartPage;
 import PageObjects.LoginPage;
 import PageObjects.ProductPage;
 import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Task_9 extends BaseTest {
@@ -10,6 +10,7 @@ public class Task_9 extends BaseTest {
     // pages
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
+    CartPage cartPage = new CartPage();
 
     // creds
     String standard = "standard_user";
@@ -20,12 +21,12 @@ public class Task_9 extends BaseTest {
     String passwordIsRequired = "Epic sadface: Password is required";
 
     @BeforeMethod
-    public void preconditions(){
+    public void preconditions() {
         loginPage.openPage();
     }
 
-//    @Test
-    public void standardUserLogin(){
+    //    @Test
+    public void standardUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -36,8 +37,9 @@ public class Task_9 extends BaseTest {
                 .checkTitle();
 
     }
-//    @Test
-    public void problemUserLogin(){
+
+    //    @Test
+    public void problemUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -48,8 +50,9 @@ public class Task_9 extends BaseTest {
                 .checkTitle();
 
     }
-//    @Test
-    public void performanceUserLogin(){
+
+    //    @Test
+    public void performanceUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -60,8 +63,9 @@ public class Task_9 extends BaseTest {
                 .checkTitle();
 
     }
-    @Test
-    public void verifyUsernameIsRequired(){
+
+    //    @Test
+    public void verifyUsernameIsRequired() {
 
         loginPage.
                 verifyLoginPage()
@@ -70,14 +74,35 @@ public class Task_9 extends BaseTest {
                 .checkErrorText(usernameIsRequired);
 
     }
-    @Test
-    public void verifyPasswordIsRequired(){
+
+    //    @Test
+    public void verifyPasswordIsRequired() {
 
         loginPage.
                 verifyLoginPage()
                 .enterUsername(standard)
                 .clickLogin()
                 .checkErrorText(passwordIsRequired);
+
+    }
+
+    @Test
+    public void addItemToCart() throws InterruptedException {
+
+        loginPage.
+                verifyLoginPage()
+                .loginToApplication(standard, password);
+
+        productPage.
+                verifyProductPage()
+                .addToCart()
+                .isCartBadgeEqualsOne();
+
+        cartPage.
+                openCartPage()
+                .verifyCartPage()
+                .checkTitle()
+                .quantityIsOne();
 
     }
 

@@ -10,6 +10,7 @@ public class ProductPage extends BasePage {
     private By logo = By.cssSelector("[class=app_logo]");
     private By filter = By.tagName("select");
     private By addBtn = By.id("add-to-cart-sauce-labs-backpack");
+    private By cartBadge = By.cssSelector(".shopping_cart_badge");
 
     public ProductPage verifyProductPage() {
 
@@ -32,5 +33,16 @@ public class ProductPage extends BasePage {
         return this;
 
     }
+
+    public ProductPage isCartBadgeEqualsOne() throws InterruptedException {
+
+        String actualResult = getElementText(cartBadge);
+        Assert.assertEquals(actualResult, "1");
+        System.out.println(actualResult);
+        Thread.sleep(3000);
+        return this;
+
+    }
+
 
 }
