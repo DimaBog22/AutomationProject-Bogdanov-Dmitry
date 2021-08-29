@@ -45,6 +45,7 @@ public class ProductPage extends BasePage {
         return this;
 
     }
+
     public ProductPage isCartBadgeEmpty() {
 
         isElementPresented(cartBadge);
@@ -52,6 +53,5 @@ public class ProductPage extends BasePage {
         return this;
 
     }
-
 
 }
