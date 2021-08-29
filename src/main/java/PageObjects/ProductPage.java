@@ -9,6 +9,7 @@ public class ProductPage extends BasePage {
     private By title = By.cssSelector("[class=title]");
     private By logo = By.cssSelector("[class=app_logo]");
     private By filter = By.tagName("select");
+    private By addBtn = By.id("add-to-cart-sauce-labs-backpack");
 
     public ProductPage verifyProductPage() {
 
@@ -21,6 +22,13 @@ public class ProductPage extends BasePage {
 
         String actualResult = getElementText(title).toLowerCase(Locale.ROOT);
         Assert.assertEquals(actualResult, "Products".toLowerCase());
+        return this;
+
+    }
+
+    public ProductPage addToCart() {
+
+        click(addBtn);
         return this;
 
     }
