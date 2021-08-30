@@ -40,11 +40,13 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage loginToApplication(String username, String password) {
+    public LoginPage loginToApplication(String username, String password) throws InterruptedException {
         enter(this.username, username);
         enter(this.password, password);
         click(this.loginBtn);
+        Thread.sleep(3000);
         return this;
+
     }
 
     public LoginPage checkErrorText(String expectedText) {

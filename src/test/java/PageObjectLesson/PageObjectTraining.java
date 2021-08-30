@@ -16,7 +16,7 @@ public class PageObjectTraining extends BaseTest {
     }
 
     @Test(priority = 1)
-    public void loginToApplicationStandard_Test() {
+    public void loginToApplicationStandard_Test() throws InterruptedException {
         loginPage.openPage()
                 .verifyLoginPage()
                 .loginToApplication("standard_user", "secret_sauce");
@@ -24,7 +24,7 @@ public class PageObjectTraining extends BaseTest {
     }
 
     @Test(priority = 2)
-    public void loginToApplicationProblem_Test() {
+    public void loginToApplicationProblem_Test() throws InterruptedException {
         loginPage.openPage()
                 .verifyLoginPage()
                 .loginToApplication("problem_user", "secret_sauce");
