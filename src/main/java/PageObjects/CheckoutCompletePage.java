@@ -20,9 +20,8 @@ public class CheckoutCompletePage extends BasePage {
 
     public CheckoutCompletePage getProofOfPayment() {
 
-        String actualResult = getElementText(completeText).toLowerCase(Locale.ROOT);
-        Assert.assertEquals(actualResult, "THANK YOU FOR YOUR ORDER".toLowerCase(Locale.ROOT));
-        System.out.println(actualResult);
+        checkTitle(completeText, "THANK YOU FOR YOUR ORDER");
+        System.out.println("deal is done!");
         return this;
 
     }

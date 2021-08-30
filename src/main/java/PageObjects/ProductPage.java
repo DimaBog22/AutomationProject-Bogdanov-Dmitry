@@ -22,10 +22,9 @@ public class ProductPage extends BasePage {
 
     }
 
-    public ProductPage checkTitle() {
+    public ProductPage checkProductPageTitle() {
 
-        String actualResult = getElementText(title).toLowerCase(Locale.ROOT);
-        Assert.assertEquals(actualResult, "Products".toLowerCase());
+        checkTitle(title, "Products");
         return this;
 
     }

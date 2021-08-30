@@ -20,10 +20,9 @@ public class CheckoutPage extends BasePage {
 
     }
 
-    public CheckoutPage checkTitle() {
+    public CheckoutPage checkCheckoutPageTitle() {
 
-        String actualResult = getElementText(title).toLowerCase(Locale.ROOT);
-        Assert.assertEquals(actualResult, "Checkout: Your Information".toLowerCase(Locale.ROOT));
+        checkTitle(title, "Checkout: Your Information");
         return this;
 
     }

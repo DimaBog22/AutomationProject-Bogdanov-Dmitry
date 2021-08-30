@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
 
+import java.util.Locale;
+
 import static driver.DriverCreation.getDriver;
 
 public class BasePage {
@@ -45,6 +47,13 @@ public class BasePage {
             return  elementCondition;
         }
         return elementCondition;
+
+    }
+
+    protected void checkTitle(By element, String expectedResult) {
+
+        String actualResult = getElementText(element).toLowerCase(Locale.ROOT);
+        Assert.assertEquals(actualResult, expectedResult.toLowerCase(Locale.ROOT));
 
     }
 

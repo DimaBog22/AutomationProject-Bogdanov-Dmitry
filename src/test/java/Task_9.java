@@ -44,7 +44,7 @@ public class Task_9 extends BaseTest {
         cartPage.
                 openCartPage()
                 .verifyCartPage()
-                .checkTitle()
+                .checkCartPageTitle()
                 .quantityIsOne()
                 .removeFromCart();
 
@@ -92,13 +92,13 @@ public class Task_9 extends BaseTest {
         cartPage.
                 openCartPage()
                 .verifyCartPage()
-                .checkTitle()
+                .checkCartPageTitle()
                 .quantityIsOne()
                 .goToCheckOut();
 
         checkoutPage.
                 verifyCheckoutPage()
-                .checkTitle()
+                .checkCheckoutPageTitle()
                 .fillForm("Dmitry", "Bogdanov", "220113");
 
         checkoutOverviewPage.
@@ -120,7 +120,7 @@ public class Task_9 extends BaseTest {
 
         productPage.
                 verifyProductPage()
-                .checkTitle();
+                .checkProductPageTitle();
 
     }
     @Test
@@ -132,7 +132,7 @@ public class Task_9 extends BaseTest {
 
         productPage.
                 verifyProductPage()
-                .checkTitle();
+                .checkProductPageTitle();
 
     }
     @Test
@@ -144,7 +144,7 @@ public class Task_9 extends BaseTest {
 
         productPage.
                 verifyProductPage()
-                .checkTitle();
+                .checkProductPageTitle();
 
     }
     @Test
@@ -182,7 +182,7 @@ public class Task_9 extends BaseTest {
         cartPage.
                 openCartPage()
                 .verifyCartPage()
-                .checkTitle()
+                .checkCartPageTitle()
                 .quantityIsOne()
                 .removeFromCart();
 

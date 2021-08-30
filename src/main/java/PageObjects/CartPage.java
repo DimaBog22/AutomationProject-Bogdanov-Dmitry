@@ -28,10 +28,9 @@ public class CartPage extends BasePage {
 
     }
 
-    public CartPage checkTitle() {
+    public CartPage checkCartPageTitle() {
 
-        String actualResult = getElementText(title).toLowerCase(Locale.ROOT);
-        Assert.assertEquals(actualResult, "Your Cart".toLowerCase(Locale.ROOT));
+        checkTitle(title, "Your Cart");
         return this;
 
     }
