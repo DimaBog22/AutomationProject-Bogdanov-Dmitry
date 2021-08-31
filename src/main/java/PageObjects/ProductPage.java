@@ -36,20 +36,32 @@ public class ProductPage extends BasePage {
 
     }
 
-    public ProductPage isCartBadgeEqualsOne() throws InterruptedException {
+    public ProductPage isCartBadgeEqualsOne() {
 
         String actualResult = getElementText(cartBadge);
         Assert.assertEquals(actualResult, "1");
         System.out.println(actualResult);
-        Thread.sleep(3000);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return this;
 
     }
 
-    public ProductPage isCartBadgeEmpty() throws InterruptedException {
+    public ProductPage isCartBadgeEmpty() {
 
         isElementPresented(cartBadge);
-        Thread.sleep(2000);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         System.out.println("item is deleted");
         return this;
 

@@ -35,11 +35,17 @@ public class CartPage extends BasePage {
 
     }
 
-    public CartPage quantityIsOne() throws InterruptedException {
+    public CartPage quantityIsOne() {
 
         String actualResult = getElementText(quantityItmes);
         Assert.assertEquals(actualResult, "1");
-        Thread.sleep(3000);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         System.out.println(actualResult);
         return this;
 

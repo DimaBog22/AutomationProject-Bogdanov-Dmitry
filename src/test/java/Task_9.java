@@ -1,7 +1,5 @@
 import PageObjects.*;
 import driver.BaseTest;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -30,7 +28,7 @@ public class Task_9 extends BaseTest {
     }
 
     @Test
-    public void removeItemFromCart() throws InterruptedException {
+    public void removeItemFromCart() {
 
         loginPage.
                 verifyLoginPage()
@@ -53,7 +51,7 @@ public class Task_9 extends BaseTest {
 
     }
     @Test
-    public void removeItemFromItemPage() throws InterruptedException {
+    public void removeItemFromItemPage() {
 
         loginPage.
                 verifyLoginPage()
@@ -67,7 +65,11 @@ public class Task_9 extends BaseTest {
         productPage.
                 openItemPage();
 
-        Thread.sleep(2000); // to check cartBadge is still 1
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        } // to check cartBadge is still 1
 
         itemPage.
                 verifyItemPage()
@@ -78,7 +80,7 @@ public class Task_9 extends BaseTest {
 
     }
     @Test
-    public void makePayment() throws InterruptedException {
+    public void makePayment() {
 
         loginPage.
                 verifyLoginPage()
@@ -110,9 +112,8 @@ public class Task_9 extends BaseTest {
                 .getProofOfPayment();
 
     }
-
     @Test
-    public void standardUserLogin() throws InterruptedException {
+    public void standardUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -124,7 +125,7 @@ public class Task_9 extends BaseTest {
 
     }
     @Test
-    public void problemUserLogin() throws InterruptedException {
+    public void problemUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -136,7 +137,7 @@ public class Task_9 extends BaseTest {
 
     }
     @Test
-    public void performanceUserLogin() throws InterruptedException {
+    public void performanceUserLogin() {
 
         loginPage.
                 verifyLoginPage()
@@ -168,7 +169,7 @@ public class Task_9 extends BaseTest {
 
     }
     @Test
-    public void addItemToCart() throws InterruptedException {
+    public void addItemToCart() {
 
         loginPage.
                 verifyLoginPage()
@@ -187,6 +188,5 @@ public class Task_9 extends BaseTest {
                 .removeFromCart();
 
     }
-
 
 }

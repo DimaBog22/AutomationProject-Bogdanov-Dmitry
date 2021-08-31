@@ -40,11 +40,17 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage loginToApplication(String username, String password) throws InterruptedException {
+    public LoginPage loginToApplication(String username, String password) {
         enter(this.username, username);
         enter(this.password, password);
         click(this.loginBtn);
-        Thread.sleep(3000);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return this;
 
     }

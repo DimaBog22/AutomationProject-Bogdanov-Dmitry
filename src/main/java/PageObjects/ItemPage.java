@@ -16,10 +16,16 @@ public class ItemPage extends BasePage {
 
     }
 
-    public ItemPage removeItemFromItemPage() throws InterruptedException {
+    public ItemPage removeItemFromItemPage() {
 
         click(removeBtn);
-        Thread.sleep(2000);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return this;
 
     }
