@@ -39,14 +39,10 @@ public class BasePage {
 
     protected Boolean isElementPresented(By element){
 
-        Boolean elementCondition = false;
-        try{
-            elementCondition = getDriver().findElement(element).isDisplayed();
+        if(getDriver().findElements(element).size() != 0) {
+            return true;
         }
-        catch (NoSuchElementException e){
-            return  elementCondition;
-        }
-        return elementCondition;
+        return false;
 
     }
 
