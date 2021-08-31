@@ -44,7 +44,15 @@ public class LoginPage extends BasePage {
         enter(this.username, username);
         enter(this.password, password);
         click(this.loginBtn);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         return this;
+
     }
 
     public LoginPage checkErrorText(String expectedText) {
