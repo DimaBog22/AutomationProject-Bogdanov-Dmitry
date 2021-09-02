@@ -26,3 +26,4 @@ hs_err_pid*
 chromedriver.exe
 /target
 AutomationProject-Bogdanov-Dmitry.iml
+/allure-results
