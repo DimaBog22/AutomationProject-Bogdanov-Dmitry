@@ -27,3 +27,4 @@ chromedriver.exe
 /target
 AutomationProject-Bogdanov-Dmitry.iml
 /allure-results
+/allure-report
