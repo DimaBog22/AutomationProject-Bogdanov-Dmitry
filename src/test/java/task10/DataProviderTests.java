@@ -21,8 +21,7 @@ public class DataProviderTests extends BaseTest {
     String emptyPasswordError = "Epic sadface: Password is required";
     String incorrectValueError = "Epic sadface: Username and password do not match any user in this service";
 
-
-    @DataProvider(name = "loginTests")
+    @DataProvider(name = "loginTests", parallel=true)
     public Object [][] loginInputData() {
 
         return new Object[][]{
