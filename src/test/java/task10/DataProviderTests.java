@@ -46,6 +46,8 @@ public class DataProviderTests extends BaseTest {
                 .loginToApplication(username, password);
         if (errorText.isEmpty()) {
             productPage.verifyProductPage();
+        } else {
+            loginPage.checkErrorText(errorText);
         }
 
     }

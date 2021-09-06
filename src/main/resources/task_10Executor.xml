@@ -6,9 +6,6 @@
             <class name="task10.DataProviderTests"></class>
         </classes>
     </test>
-    <test name="DataProviderLoginPage">
-        <classes>
-            <class name="task10.AddRemoveItemInvocationCount"></class>
-        </classes>
-    </test>
+
+
 </suite>
