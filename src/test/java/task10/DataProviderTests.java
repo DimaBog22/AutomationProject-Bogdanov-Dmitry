@@ -27,7 +27,7 @@ public class DataProviderTests extends BaseTest {
 
         return new Object[][]{
 
-                {emptyField, password, emptyField}, // positive
+                {username, password, emptyField}, // positive
                 {username, emptyField, emptyPasswordError},
                 {emptyField, password, emptyUsernameError},
                 {emptyField, emptyField, emptyUsernameError},
