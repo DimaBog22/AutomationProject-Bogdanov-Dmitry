@@ -3,6 +3,7 @@ package task10;
 import PageObjects.LoginPage;
 import PageObjects.ProductPage;
 import driver.BaseTest;
+import driver.Retry;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
@@ -26,7 +27,7 @@ public class DataProviderTests extends BaseTest {
 
         return new Object[][]{
 
-                {username, password, emptyField}, // positive
+                {emptyField, password, emptyField}, // positive
                 {username, emptyField, emptyPasswordError},
                 {emptyField, password, emptyUsernameError},
                 {emptyField, emptyField, emptyUsernameError},
@@ -37,7 +38,7 @@ public class DataProviderTests extends BaseTest {
         };
 
     }
-    @Test(dataProvider = "loginTests")
+    @Test(dataProvider = "loginTests", retryAnalyzer = Retry.class)
     public void loginVerification(String username, String password, @Optional("") String errorText) {
 
         loginPage.
