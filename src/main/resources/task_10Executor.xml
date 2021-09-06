@@ -3,9 +3,9 @@
 <suite name="task_10" parallel="tests" thread-count="7">
     <test name="DataProviderLoginPage">
         <classes>
-            <class name="task10.DataProviderTests"></class>
+            <parameter name="username" value="standard_user"></parameter>
+            <parameter name="password" value="secret_sauce"></parameter>
+            <class name="task10.AddRemoveItemInvocationCount"></class>
         </classes>
     </test>
-
-
 </suite>
