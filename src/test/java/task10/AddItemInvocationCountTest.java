@@ -7,7 +7,7 @@ import driver.BaseTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class AddItemInvocationCount extends BaseTest {
+public class AddItemInvocationCountTest extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();

@@ -5,14 +5,14 @@
         <classes>
             <parameter name="username" value="standard_user"></parameter>
             <parameter name="password" value="secret_sauce"></parameter>
-            <class name="task10.AddItemInvocationCount"></class>
+            <class name="task10.AddItemInvocationCountTest"></class>
         </classes>
     </test>
     <test name="RemoveItem">
         <classes>
             <parameter name="username" value="standard_user"></parameter>
             <parameter name="password" value="secret_sauce"></parameter>
-            <class name="task10.RemoveItemInvocationCount"></class>
+            <class name="task10.RemoveItemInvocationCountTest"></class>
         </classes>
     </test>
 </suite>
