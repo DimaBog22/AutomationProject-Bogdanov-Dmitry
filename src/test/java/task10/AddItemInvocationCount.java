@@ -1,19 +1,20 @@
 package task10;
 
+import PageObjects.CartPage;
 import PageObjects.LoginPage;
 import PageObjects.ProductPage;
-import driver.Retry;
-import org.testng.annotations.Optional;
+import driver.BaseTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class AddRemoveItemInvocationCount {
+public class AddItemInvocationCount extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
     ProductPage productPage = new ProductPage();
+    CartPage cartPage = new CartPage();
 
     @Parameters({"username", "password"})
-    @Test(retryAnalyzer = Retry.class)
+    @Test(invocationCount = 2,  timeOut = 10000)
     public void addItem(String username, String password) {
 
         loginPage.
@@ -21,9 +22,13 @@ public class AddRemoveItemInvocationCount {
                 .verifyLoginPage()
                 .loginToApplication(username, password);
 
-        productPage.verifyProductPage();
+        productPage.
+                verifyProductPage()
+                .addToCart()
+                .isCartBadgeEqualsOne();
+
+        closeDriver();
 
     }
-
 
 }

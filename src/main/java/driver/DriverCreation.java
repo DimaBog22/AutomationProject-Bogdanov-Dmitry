@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
  */
 
 public class DriverCreation {
-    // for parallel execution
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {

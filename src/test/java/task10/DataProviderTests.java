@@ -4,6 +4,7 @@ import PageObjects.LoginPage;
 import PageObjects.ProductPage;
 import driver.BaseTest;
 import driver.Retry;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
@@ -49,6 +50,8 @@ public class DataProviderTests extends BaseTest {
         } else {
             loginPage.checkErrorText(errorText);
         }
+
+        closeDriver();
 
     }
 
