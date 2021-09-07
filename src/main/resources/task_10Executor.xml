@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="task_10DataProvider">
+    <test name="DataProviderTests">
+        <classes>
+            <class name="task10.DataProviderTests"></class>
+        </classes>
+    </test>
+    <test name="AddItem">
+        <parameter name="username" value="standard_user"></parameter>
+        <parameter name="password" value="secret_sauce"></parameter>
+        <classes>
+            <class name="task10.AddItemInvocationCount"></class>
+        </classes>
+    </test>
+    <test name="RemoveItem">
+        <parameter name="username" value="standard_user"></parameter>
+        <parameter name="password" value="secret_sauce"></parameter>
+        <classes>
+            <class name="task10.RemoveItemInvocationCount"></class>
+        </classes>
+    </test>
+</suite>
