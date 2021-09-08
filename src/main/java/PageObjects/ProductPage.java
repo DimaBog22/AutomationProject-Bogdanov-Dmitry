@@ -5,6 +5,9 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import PageObjects.FilterEnum.*;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 import static driver.DriverCreation.getDriver;
 
 public class ProductPage extends BasePage {
@@ -15,6 +18,8 @@ public class ProductPage extends BasePage {
     private By cartBadge = By.cssSelector(".shopping_cart_badge");
     private By productItem = By.id("item_4_img_link");
     private By select = By.cssSelector(".product_sort_container");
+    private By productNames = By.cssSelector(".inventory_item_name");
+    private By productPrices = By.cssSelector(".inventory_item_price");
 
     public ProductPage verifyProductPage() {
 
@@ -82,5 +87,54 @@ public class ProductPage extends BasePage {
         return this;
 
     }
+
+    public ProductPage sortByNameAZ() {
+
+        List<String> expectedData = getDriver().findElements(productNames).stream().map(data -> data.getText()).sorted().collect(Collectors.toList());
+        List<String> actualData = getDriver().findElements(productNames).stream().map(data -> data.getText()).collect(Collectors.toList());
+        Assert.assertEquals(expectedData, actualData);
+        System.out.println(actualData);
+        System.out.println(expectedData);
+        return this;
+
+    }
+
+    public ProductPage sortByNameZA() {
+
+        List<String> expectedData = getDriver().findElements(productNames).stream().map(data -> data.getText()).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        List<String> actualData = getDriver().findElements(productNames).stream().map(data -> data.getText()).collect(Collectors.toList());
+        Assert.assertEquals(expectedData, actualData);
+        System.out.println(actualData);
+        System.out.println(expectedData);
+        return this;
+
+    }
+
+    public ProductPage sortByPriceLH() {
+
+
+        List<String> actualData = getDriver().findElements(productPrices).stream().map(data -> data.getText().replace("$", " ").trim()).collect(Collectors.toList());
+        String [] expectedDataArr = {"7.99", "9.99", "15.99", "15.99", "29.99", "49.99"};
+        List<String> expectedData = Arrays.asList(expectedDataArr);
+        Assert.assertEquals(expectedData, actualData);
+        System.out.println(expectedData);
+        System.out.println(actualData);
+        return this;
+
+    }
+
+    public ProductPage sortByPriceHL() {
+
+
+        List<String> actualData = getDriver().findElements(productPrices).stream().map(data -> data.getText().replace("$", " ").trim()).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        String [] expectedDataArr = {"49.99", "9.99", "15.99", "15.99", "29.99", "7.99"};
+        List<String> expectedData = Arrays.asList(expectedDataArr);
+        Assert.assertEquals(expectedData, actualData);
+        System.out.println(expectedData);
+        System.out.println(actualData);
+        return this;
+
+    }
+
 
 }
