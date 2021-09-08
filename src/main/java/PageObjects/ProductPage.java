@@ -1,9 +1,9 @@
 package PageObjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
-import java.util.Locale;
+import PageObjects.FilterEnum.*;
 
 import static driver.DriverCreation.getDriver;
 
@@ -14,6 +14,7 @@ public class ProductPage extends BasePage {
     private By addBtn = By.id("add-to-cart-sauce-labs-backpack");
     private By cartBadge = By.cssSelector(".shopping_cart_badge");
     private By productItem = By.id("item_4_img_link");
+    private By select = By.cssSelector(".product_sort_container");
 
     public ProductPage verifyProductPage() {
 
@@ -70,6 +71,14 @@ public class ProductPage extends BasePage {
     public ProductPage openItemPage() {
 
         click(productItem);
+        return this;
+
+    }
+
+    public ProductPage selectOption(FilterEnum filterEnum) {
+
+        Select selector = new Select(getDriver().findElement(select));
+        selector.selectByValue(filterEnum.getOption());
         return this;
 
     }
