@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.Saucedemo;
 
 public enum FilterEnum {
 

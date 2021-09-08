@@ -1,9 +1,8 @@
-package PageObjects;
+package PageObjects.Saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import PageObjects.FilterEnum.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
