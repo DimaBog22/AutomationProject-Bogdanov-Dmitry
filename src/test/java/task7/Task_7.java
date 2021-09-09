@@ -1,3 +1,5 @@
+package task7;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +11,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Task_6 {
+public class Task_7 {
 
     WebDriver driver = null;
     String link = "https://www.saucedemo.com/";

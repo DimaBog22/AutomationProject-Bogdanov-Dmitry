@@ -1,3 +1,5 @@
+package Lectures.JsonLecture;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import jsonPojo.User;
