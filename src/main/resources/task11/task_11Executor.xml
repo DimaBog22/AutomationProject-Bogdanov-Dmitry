@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Welcome to the-internet" parallel="tests" thread-count="2">
+    <test name="Context Menu">
+        <classes>
+            <class name="Lectures.Herokuapp.HomePage_Test"/>
+            <class name="Lectures.Herokuapp.ContextMenu_Test"/>
+        </classes>
+    </test>
+
+    <test name="Dynamic Controls">
+        <classes>
+            <class name="Lectures.Herokuapp.HomePage_Test"/>
+            <class name="Lectures.Herokuapp.DynamicControls_Test"/>
+        </classes>
+    </test>
+
+</suite>
