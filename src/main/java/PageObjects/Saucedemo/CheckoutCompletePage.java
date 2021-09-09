@@ -1,8 +1,6 @@
-package PageObjects;
+package PageObjects.Saucedemo;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
-import java.util.Locale;
 
 public class CheckoutCompletePage extends BasePage {
 

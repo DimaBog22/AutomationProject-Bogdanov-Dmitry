@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="task_10AddRemoveItem" parallel="tests" thread-count="2">
+    <test name="AddItem">
+        <classes>
+            <parameter name="username" value="standard_user"></parameter>
+            <parameter name="password" value="secret_sauce"></parameter>
+            <class name="task10.AddItemInvocationCountTest"></class>
+        </classes>
+    </test>
+    <test name="RemoveItem">
+        <classes>
+            <parameter name="username" value="standard_user"></parameter>
+            <parameter name="password" value="secret_sauce"></parameter>
+            <class name="task10.RemoveItemInvocationCountTest"></class>
+        </classes>
+    </test>
+</suite>

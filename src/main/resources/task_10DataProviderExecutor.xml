@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="PageObject">
-    <test name="Page Object Home Task">
+<suite name="task_10DataProvider">
+    <test name="DataProviderTests">
         <classes>
-            <class name="Task_9"></class>
+            <class name="task10.DataProviderTests"></class>
         </classes>
     </test>
 </suite>

@@ -1,9 +1,7 @@
-package PageObjects;
+package PageObjects.Saucedemo;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
-import static driver.DriverCreation.getDriver;
 
 public class LoginPage extends BasePage {
     private By username = By.cssSelector("[data-test=username]");

@@ -1,7 +1,9 @@
-package PageObjects;
+package PageObjects.Saucedemo;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+
+import java.util.ArrayList;
 import java.util.Locale;
 import static driver.DriverCreation.getDriver;
 
