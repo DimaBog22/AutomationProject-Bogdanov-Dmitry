@@ -7,8 +7,12 @@ public class PropertyReader {
 
     private Properties properties;
 
-    public PropertyReader(Properties properties) {
-        this.properties = properties;
+    public PropertyReader(String name) {
+        this.properties = getProperties(name);
+    }
+
+    public Properties getProperties() {
+        return properties;
     }
 
     public Properties getProperties(String propertyName) {

@@ -2,12 +2,17 @@ package PageObjects.Saucedemo;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
-import java.util.ArrayList;
+import properties.PropertyReader;
 import java.util.Locale;
 import static driver.DriverCreation.getDriver;
 
 public class BasePage {
+
+    protected PropertyReader appProperties;
+
+    public BasePage() {
+        appProperties = new PropertyReader("config.properties");
+    }
 
     protected void enter(By element, CharSequence... charSequences) {
         getDriver().findElement(element).clear();
@@ -18,7 +23,7 @@ public class BasePage {
         getDriver().findElement(element).click();
     }
 
-    protected void open(String url) {
+    protected void openLink(String url) {
         getDriver().get(url);
     }
 
@@ -50,6 +55,10 @@ public class BasePage {
         String actualResult = getElementText(element).toLowerCase(Locale.ROOT);
         Assert.assertEquals(actualResult, expectedResult.toLowerCase(Locale.ROOT));
 
+    }
+
+    protected void openLink() {
+        getDriver().get(appProperties.getProperties().getProperty("url"));
     }
 
 }

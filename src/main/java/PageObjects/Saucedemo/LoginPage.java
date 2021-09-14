@@ -19,7 +19,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage openPage() {
-        open("https://www.saucedemo.com/");
+        openLink();
         return this;
     }
 
