@@ -3,7 +3,7 @@ package task10;
 import PageObjects.Saucedemo.BasePage;
 import PageObjects.Saucedemo.LoginPage;
 import PageObjects.Saucedemo.ProductPage;
-import driver.Listener;
+import testNG.Listener;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.testng.annotations.Listeners;

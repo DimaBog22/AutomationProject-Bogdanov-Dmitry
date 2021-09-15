@@ -11,7 +11,7 @@ public class BasePage {
     protected PropertyReader appProperties;
 
     public BasePage() {
-        appProperties = new PropertyReader("config.properties");
+        appProperties = new PropertyReader("config/config.properties");
     }
 
     protected void enter(By element, CharSequence... charSequences) {
@@ -56,7 +56,7 @@ public class BasePage {
         Assert.assertEquals(actualResult, expectedResult.toLowerCase(Locale.ROOT));
 
     }
-
+    // using config.properties file
     protected void openLink() {
         getDriver().get(appProperties.getProperties().getProperty("url"));
     }

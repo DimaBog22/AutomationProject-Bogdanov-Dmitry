@@ -1,25 +1,31 @@
-package AppPropertiesTests;
+package applicationPropertiesTests;
 
 import PageObjects.Saucedemo.LoginPage;
 import PageObjects.Saucedemo.ProductPage;
 import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import properties.PropertyReader;
 
-    public class AppPropertiesLoginTest extends BaseTest {
+public class AppPropertiesLoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage();
         ProductPage productPage = new ProductPage();
+
+        // using config.properties file
+        PropertyReader appProperties = new PropertyReader("config/config.properties");
+        String username = appProperties.getProperties().getProperty("login");
+        String password = appProperties.getProperties().getProperty("password");
 
         @BeforeMethod
         public void precondition() {
             loginPage.openPage();
         }
 
-        @Test(priority = 1)
+        @Test()
         public void loginToApplicationStandard_Test() throws InterruptedException {
             loginPage.openPage()
                     .verifyLoginPage()
-                    .loginToApplication("standard_user", "secret_sauce");
+                    .loginToApplication(username, password);
             productPage.verifyProductPage();
         }
 

@@ -1,4 +1,4 @@
-package driver;
+package testNG;
 
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
