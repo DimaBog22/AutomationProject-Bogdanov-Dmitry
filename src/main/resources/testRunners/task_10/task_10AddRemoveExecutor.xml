@@ -3,16 +3,16 @@
 <suite name="task_10AddRemoveItem" parallel="tests" thread-count="2">
     <test name="AddItem">
         <classes>
+            <class name="task10.AddItemInvocationCountTest"></class>
             <parameter name="username" value="standard_user"></parameter>
             <parameter name="password" value="secret_sauce"></parameter>
-            <class name="task10.AddItemInvocationCountTest"></class>
         </classes>
     </test>
     <test name="RemoveItem">
         <classes>
+            <class name="task10.RemoveItemInvocationCountTest"></class>
             <parameter name="username" value="standard_user"></parameter>
             <parameter name="password" value="secret_sauce"></parameter>
-            <class name="task10.RemoveItemInvocationCountTest"></class>
         </classes>
     </test>
 </suite>

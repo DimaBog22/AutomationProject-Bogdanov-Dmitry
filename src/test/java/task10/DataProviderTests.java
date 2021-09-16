@@ -3,7 +3,7 @@ package task10;
 import PageObjects.Saucedemo.LoginPage;
 import PageObjects.Saucedemo.ProductPage;
 import driver.BaseTest;
-import driver.Retry;
+import testNG.Retry;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
