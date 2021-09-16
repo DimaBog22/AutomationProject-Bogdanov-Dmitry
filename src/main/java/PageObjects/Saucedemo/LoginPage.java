@@ -19,7 +19,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage openPage() {
-        openLink();
+        openUsingProperties();
         return this;
     }
 

@@ -23,7 +23,7 @@ public class BasePage {
         getDriver().findElement(element).click();
     }
 
-    protected void openLink(String url) {
+    protected void openUsingProperties(String url) {
         getDriver().get(url);
     }
 
@@ -57,7 +57,7 @@ public class BasePage {
 
     }
     // using config.properties file
-    protected void openLink() {
+    protected void openUsingProperties() {
         getDriver().get(appProperties.getProperties().getProperty("url"));
     }
 
