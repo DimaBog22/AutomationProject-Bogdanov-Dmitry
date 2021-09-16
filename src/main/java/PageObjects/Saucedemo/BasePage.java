@@ -61,4 +61,8 @@ public class BasePage {
         getDriver().get(appProperties.getProperties().getProperty("url"));
     }
 
+    protected void open(String url) {
+        getDriver().get(url);
+    }
+
 }
