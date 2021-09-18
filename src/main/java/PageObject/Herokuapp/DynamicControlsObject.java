@@ -1,13 +1,13 @@
-package PageObjects.Herokuapp;
+package PageObject.Herokuapp;
 
-import PageObjects.Saucedemo.BasePage;
+import PageObject.Saucedemo.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import java.util.function.Function;
 import static driver.DriverCreation.getDriver;
-import static PageObjects.Herokuapp.HomePageLinksEnum.DYNAMIC_CONTROLS;
+import static PageObject.Herokuapp.HomePageLinksEnum.DYNAMIC_CONTROLS;
 
 public class DynamicControlsObject extends BasePage {
 

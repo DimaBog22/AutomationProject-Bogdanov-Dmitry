@@ -1,6 +1,6 @@
 package Lectures.Herokuapp;
 
-import PageObjects.Herokuapp.HomePageObject;
+import PageObject.Herokuapp.HomePageObject;
 import driver.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

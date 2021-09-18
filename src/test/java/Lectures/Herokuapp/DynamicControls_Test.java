@@ -1,11 +1,11 @@
 package Lectures.Herokuapp;
 
-import PageObjects.Herokuapp.DynamicControlsObject;
-import PageObjects.Herokuapp.HomePageObject;
+import PageObject.Herokuapp.DynamicControlsObject;
+import PageObject.Herokuapp.HomePageObject;
 import driver.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import static PageObjects.Herokuapp.HomePageLinksEnum.DYNAMIC_CONTROLS;
+import static PageObject.Herokuapp.HomePageLinksEnum.DYNAMIC_CONTROLS;
 
 
 public class DynamicControls_Test extends BaseTest{

@@ -1,4 +1,4 @@
-package PageObjects.Herokuapp;
+package PageObject.Herokuapp;
 
 public enum HomePageLinksEnum {
 
