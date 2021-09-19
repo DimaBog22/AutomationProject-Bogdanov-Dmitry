@@ -7,4 +7,10 @@
             </class>
         </classes>
     </test>
+    <test name="task_13HerokuappLogin">
+        <classes>
+            <class name="PatternsTask.HerokuappTests">
+            </class>
+        </classes>
+    </test>
 </suite>
