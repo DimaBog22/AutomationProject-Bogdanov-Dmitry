@@ -65,4 +65,19 @@ public class LoginPagePF extends BasePage {
 
     }
 
+    public LoginPagePF loginToApplication(UserBuilder user) {
+
+        this.username.sendKeys(user.getUsername());
+        this.password.sendKeys(user.getPassword());
+        loginBtn.click();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return this;
+
+    }
+
 }

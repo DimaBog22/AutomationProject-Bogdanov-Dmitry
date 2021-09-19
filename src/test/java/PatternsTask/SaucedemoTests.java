@@ -20,8 +20,6 @@ public class SaucedemoTests extends BaseTest {
             .withPassword(password)
             .build();
 
-
-
     @Test
     public void loginTest() {
 
@@ -29,6 +27,15 @@ public class SaucedemoTests extends BaseTest {
                 .openPage(link)
                 .verifyPage()
                 .loginToApplication(user.getUsername(), user.getPassword());
+
+    }
+    @Test
+    public void loginTestValueObject() {
+
+        loginPagePF
+                .openPage(link)
+                .verifyPage()
+                .loginToApplication(user);
 
     }
 
