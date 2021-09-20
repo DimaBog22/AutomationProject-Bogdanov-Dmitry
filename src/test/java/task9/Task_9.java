@@ -1,6 +1,6 @@
 package task9;
 
-import PageObjects.Saucedemo.*;
+import PageObject.Saucedemo.*;
 import driver.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;

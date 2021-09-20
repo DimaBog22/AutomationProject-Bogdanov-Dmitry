@@ -1,4 +1,4 @@
-package PageObjects.Saucedemo;
+package PageObject.Saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
