@@ -1,13 +1,12 @@
 package Lectures.Herokuapp;
 
-import PageObjects.Herokuapp.ContextMenuObject;
-import PageObjects.Herokuapp.DynamicControlsObject;
-import PageObjects.Herokuapp.HomePageObject;
+import PageObject.Herokuapp.ContextMenuObject;
+import PageObject.Herokuapp.HomePageObject;
 import driver.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static PageObjects.Herokuapp.HomePageLinksEnum.CONTEXT_MENU;
+import static PageObject.Herokuapp.HomePageLinksEnum.CONTEXT_MENU;
 
 public class ContextMenu_Test extends BaseTest{
 

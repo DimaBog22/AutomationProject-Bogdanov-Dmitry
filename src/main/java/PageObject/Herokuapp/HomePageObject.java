@@ -1,8 +1,7 @@
-package PageObjects.Herokuapp;
+package PageObject.Herokuapp;
 
-import PageObjects.Saucedemo.BasePage;
+import PageObject.Saucedemo.BasePage;
 import org.openqa.selenium.By;
-import static driver.DriverCreation.getDriver;
 
 import java.util.Arrays;
 

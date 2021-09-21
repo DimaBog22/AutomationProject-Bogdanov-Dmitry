@@ -1,8 +1,8 @@
 package task10;
 
-import PageObjects.Saucedemo.CartPage;
-import PageObjects.Saucedemo.LoginPage;
-import PageObjects.Saucedemo.ProductPage;
+import PageObject.Saucedemo.CartPage;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductPage;
 import driver.BaseTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;

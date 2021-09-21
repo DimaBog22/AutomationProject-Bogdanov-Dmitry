@@ -1,14 +1,14 @@
 package task10;
 
-import PageObjects.Saucedemo.BasePage;
-import PageObjects.Saucedemo.LoginPage;
-import PageObjects.Saucedemo.ProductPage;
+import PageObject.Saucedemo.BasePage;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductPage;
 import testNG.Listener;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import static PageObjects.Saucedemo.FilterEnum.*;
+import static PageObject.Saucedemo.FilterEnum.*;
 
 @Listeners(Listener.class)
 public class EnumSortTests extends BasePage {

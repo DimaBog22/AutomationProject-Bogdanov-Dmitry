@@ -1,7 +1,7 @@
 package task10;
 
-import PageObjects.Saucedemo.LoginPage;
-import PageObjects.Saucedemo.ProductPage;
+import PageObject.Saucedemo.LoginPage;
+import PageObject.Saucedemo.ProductPage;
 import driver.BaseTest;
 import testNG.Retry;
 import org.testng.annotations.DataProvider;

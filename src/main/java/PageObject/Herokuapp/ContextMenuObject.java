@@ -1,12 +1,12 @@
-package PageObjects.Herokuapp;
+package PageObject.Herokuapp;
 
-import PageObjects.Saucedemo.BasePage;
+import PageObject.Saucedemo.BasePage;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import static driver.DriverCreation.getDriver;
-import static PageObjects.Herokuapp.HomePageLinksEnum.CONTEXT_MENU;
+import static PageObject.Herokuapp.HomePageLinksEnum.CONTEXT_MENU;
 
 public class ContextMenuObject extends BasePage {
 
