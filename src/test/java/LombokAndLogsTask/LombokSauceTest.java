@@ -54,7 +54,6 @@ public class LombokSauceTest extends BaseTest {
                 openPage(link)
                 .verifyLoginPage()
                 .loginToApplication(user.getUsername(), user.getPassword());
-        System.out.println(user.getPassword());
 
         productPage.
                 verifyProductPage()

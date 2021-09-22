@@ -33,7 +33,6 @@ public class LombokHerokuappTest extends BaseTest {
                 .verifyPageTitle()
                 .loginIntoApplication(user.getUsername(), user.getPassword())
                 .isAuthSuccessful();
-        System.out.println(user.getPassword());
 
     }
 
