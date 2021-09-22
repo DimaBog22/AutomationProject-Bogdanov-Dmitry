@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="task_14Saucedemo">
+    <test name="task_14SaucedemoLogin">
+        <classes>
+            <class name="">
+            </class>
+        </classes>
+    </test>
+    <test name="task_14HerokuappLogin">
+        <classes>
+            <class name="">
+            </class>
+        </classes>
+    </test>
+</suite>
