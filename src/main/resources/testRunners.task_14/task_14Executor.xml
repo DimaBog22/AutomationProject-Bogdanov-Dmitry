@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="task_14Saucedemo">
-    <test name="task_14SaucedemoLogin">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="task_14Lombok">
+    <test name="task_14SaucedemoSmoke" enabled="false">
         <classes>
-            <class name="">
+            <class name="LombokAndLogsTask.LombokSauceTest">
             </class>
         </classes>
     </test>
     <test name="task_14HerokuappLogin">
         <classes>
-            <class name="">
+            <class name="LombokAndLogsTask.LombokHerokuappTest">
             </class>
         </classes>
     </test>

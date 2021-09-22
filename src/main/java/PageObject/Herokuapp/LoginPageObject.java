@@ -58,6 +58,21 @@ public class LoginPageObject extends BasePage {
         return this;
 
     }
+
+    public LoginPageObject loginIntoApplication(String username, String password) {
+
+        enter(this.username, username);
+        enter(this.password, password);
+        clickloginBtn();
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return this;
+
+    }
     /*
         Value Object pattern
     */

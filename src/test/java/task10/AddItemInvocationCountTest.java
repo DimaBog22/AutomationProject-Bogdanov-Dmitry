@@ -13,7 +13,7 @@ public class AddItemInvocationCountTest extends BaseTest {
     ProductPage productPage = new ProductPage();
     CartPage cartPage = new CartPage();
 
-    @Parameters({"username", "password"})
+    @Parameters({"username", "passwordSauce"})
     @Test(invocationCount = 2,  timeOut = 10000)
     public void addItem(String username, String password) {
 

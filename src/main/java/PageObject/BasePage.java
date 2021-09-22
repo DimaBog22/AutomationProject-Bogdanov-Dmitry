@@ -76,7 +76,7 @@ public class BasePage {
     }
 
     protected void open(String url) {
-        log.info(url + "is opened");
+        log.info(url + " is opened");
         getDriver().get(url);
     }
 

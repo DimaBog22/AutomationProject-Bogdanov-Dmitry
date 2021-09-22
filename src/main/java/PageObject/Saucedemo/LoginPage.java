@@ -24,6 +24,11 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage openPage(String url) {
+        open(url);
+        return this;
+    }
+
     public LoginPage enterUsername(String username) {
         enter(this.username, username);
         return this;
@@ -40,6 +45,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage loginToApplication(String username, String password) {
+
         enter(this.username, username);
         enter(this.password, password);
         click(this.loginBtn);

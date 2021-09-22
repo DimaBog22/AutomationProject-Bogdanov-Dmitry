@@ -1,6 +1,7 @@
 package PageObject.Saucedemo;
 
 import PageObject.BasePage;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -9,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static driver.DriverCreation.getDriver;
-
+@Log4j2
 public class ProductPage extends BasePage {
     private By title = By.cssSelector("[class=title]");
     private By logo = By.cssSelector("[class=app_logo]");
@@ -46,7 +47,7 @@ public class ProductPage extends BasePage {
 
         String actualResult = getElementText(cartBadge);
         Assert.assertEquals(actualResult, "1");
-        System.out.println(actualResult);
+        log.info("cartBadge is " + actualResult);
 
         try {
             Thread.sleep(3000);
@@ -93,8 +94,8 @@ public class ProductPage extends BasePage {
         List<String> expectedData = getDriver().findElements(productNames).stream().map(data -> data.getText()).sorted().collect(Collectors.toList());
         List<String> actualData = getDriver().findElements(productNames).stream().map(data -> data.getText()).collect(Collectors.toList());
         Assert.assertEquals(expectedData, actualData);
-        System.out.println(actualData);
-        System.out.println(expectedData);
+        log.info("actual: " + actualData);
+        log.info("expect: " + expectedData);
         return this;
 
     }
@@ -104,8 +105,8 @@ public class ProductPage extends BasePage {
         List<String> expectedData = getDriver().findElements(productNames).stream().map(data -> data.getText()).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         List<String> actualData = getDriver().findElements(productNames).stream().map(data -> data.getText()).collect(Collectors.toList());
         Assert.assertEquals(expectedData, actualData);
-        System.out.println(actualData);
-        System.out.println(expectedData);
+        log.info("actual: " + actualData);
+        log.info("expect: " + expectedData);
         return this;
 
     }
@@ -117,8 +118,8 @@ public class ProductPage extends BasePage {
         String [] expectedDataArr = {"7.99", "9.99", "15.99", "15.99", "29.99", "49.99"};
         List<String> expectedData = Arrays.asList(expectedDataArr);
         Assert.assertEquals(expectedData, actualData);
-        System.out.println(expectedData);
-        System.out.println(actualData);
+        log.info("actual: " + actualData);
+        log.info("expect: " + expectedData);
         return this;
 
     }
@@ -130,8 +131,8 @@ public class ProductPage extends BasePage {
         String [] expectedDataArr = {"49.99", "9.99", "15.99", "15.99", "29.99", "7.99"};
         List<String> expectedData = Arrays.asList(expectedDataArr);
         Assert.assertEquals(expectedData, actualData);
-        System.out.println(expectedData);
-        System.out.println(actualData);
+        log.info("actual: " + actualData);
+        log.info("expect: " + expectedData);
         return this;
 
     }

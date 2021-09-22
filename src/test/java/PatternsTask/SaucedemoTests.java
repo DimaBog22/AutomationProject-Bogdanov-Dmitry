@@ -12,8 +12,8 @@ public class SaucedemoTests extends BaseTest {
     // data from properties file
     PropertyReader appProperties = new PropertyReader("config/config.properties");
     String link = appProperties.getProperties().getProperty("url");
-    String username = appProperties.getProperties().getProperty("login");
-    String password = appProperties.getProperties().getProperty("password");
+    String username = appProperties.getProperties().getProperty("standardloginSauce");
+    String password = appProperties.getProperties().getProperty("passwordSauce");
     // using Builder pattern
     UserBuilder user = new UserBuilder.Builder()
             .withUsername(username)
