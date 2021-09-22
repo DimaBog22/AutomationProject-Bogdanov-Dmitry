@@ -1,6 +1,6 @@
 package PageObject.Herokuapp;
 
-import PageObject.Saucedemo.BasePage;
+import PageObject.BasePage;
 import org.openqa.selenium.By;
 
 import java.util.Arrays;

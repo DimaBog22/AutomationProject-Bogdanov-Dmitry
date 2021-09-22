@@ -1,14 +1,13 @@
 package PageObject.Herokuapp;
 
 import PageFactory.Saucedemo.UserBuilder;
-import PageObject.Saucedemo.BasePage;
+import PageObject.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import java.util.function.Function;
 import static driver.DriverCreation.getDriver;
-import static PageObject.Herokuapp.HomePageLinksEnum.LOGIN_PAGE;
 
 public class LoginPageObject extends BasePage {
 

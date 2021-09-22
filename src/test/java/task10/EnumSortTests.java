@@ -1,6 +1,6 @@
 package task10;
 
-import PageObject.Saucedemo.BasePage;
+import PageObject.BasePage;
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductPage;
 import testNG.Listener;
