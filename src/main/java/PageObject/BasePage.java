@@ -4,6 +4,8 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import properties.PropertyReader;
+
+import java.util.Arrays;
 import java.util.Locale;
 import static driver.DriverCreation.getDriver;
 @Log4j2
@@ -19,7 +21,7 @@ public class BasePage {
     protected void enter(By element, CharSequence... charSequences) {
         getDriver().findElement(element).clear();
         getDriver().findElement(element).sendKeys(charSequences);
-        log.info(element + " has value " + charSequences);
+        log.info(element + " was filled");
     }
 
     protected void click(By element) {
@@ -63,7 +65,7 @@ public class BasePage {
     protected void checkTitle(By element, String expectedResult) {
 
         String actualResult = getElementText(element).toLowerCase(Locale.ROOT);
-        log.info("title is " + actualResult);
+        log.info("title is " + "\"" + actualResult + "\"");
         Assert.assertEquals(actualResult, expectedResult.toLowerCase(Locale.ROOT));
 
     }
