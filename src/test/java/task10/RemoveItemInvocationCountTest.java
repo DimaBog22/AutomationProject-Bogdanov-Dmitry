@@ -13,7 +13,7 @@ public class RemoveItemInvocationCountTest extends BaseTest {
     ProductPage productPage = new ProductPage();
     CartPage cartPage = new CartPage();
 
-    @Parameters({"username", "passwordSauce"})
+    @Parameters({"standardloginSauce", "passwordSauce"})
     @Test
     public void removeItem(String username, String password) {
 
