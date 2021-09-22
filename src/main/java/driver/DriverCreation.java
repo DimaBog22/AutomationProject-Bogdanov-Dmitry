@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
     Patten Singleton
 */
 public class DriverCreation {
-    
+
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
