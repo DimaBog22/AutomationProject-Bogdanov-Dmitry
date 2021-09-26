@@ -1,4 +1,4 @@
-package applicationPropertiesTests;
+package ApplicationPropertiesTests;
 
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductPage;

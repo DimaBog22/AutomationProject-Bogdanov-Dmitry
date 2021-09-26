@@ -3,7 +3,7 @@
 <suite name="task_12WorkingWithProperties">
     <test name="WorkingWithProperties">
         <classes>
-            <class name="applicationPropertiesTests.AppPropertiesLoginTest">
+            <class name="ApplicationPropertiesTests.AppPropertiesLoginTest">
             </class>
         </classes>
     </test>
