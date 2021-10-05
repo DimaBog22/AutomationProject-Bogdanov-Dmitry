@@ -4,15 +4,15 @@
     <test name="AddItem">
         <classes>
             <class name="task10.AddItemInvocationCountTest"></class>
-            <parameter name="username" value="standard_user"></parameter>
-            <parameter name="password" value="secret_sauce"></parameter>
+            <parameter name="standardloginSauce" value="standard_user"></parameter>
+            <parameter name="passwordSauce" value="secret_sauce"></parameter>
         </classes>
     </test>
     <test name="RemoveItem">
         <classes>
             <class name="task10.RemoveItemInvocationCountTest"></class>
-            <parameter name="username" value="standard_user"></parameter>
-            <parameter name="password" value="secret_sauce"></parameter>
+            <parameter name="standardloginSauce" value="standard_user"></parameter>
+            <parameter name="passwordSauce" value="secret_sauce"></parameter>
         </classes>
     </test>
 </suite>

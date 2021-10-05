@@ -13,8 +13,8 @@ public class AppPropertiesLoginTest extends BaseTest {
 
     // using config.properties file
     PropertyReader appProperties = new PropertyReader("config/config.properties");
-    String username = appProperties.getProperties().getProperty("login");
-    String password = appProperties.getProperties().getProperty("password");
+    String username = appProperties.getProperties().getProperty("standardloginSauce");
+    String password = appProperties.getProperties().getProperty("passwordSauce");
 
     @BeforeMethod
     public void precondition() {
