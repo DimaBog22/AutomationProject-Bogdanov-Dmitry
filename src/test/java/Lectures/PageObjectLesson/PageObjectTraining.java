@@ -1,4 +1,4 @@
-package PageObjectLesson;
+package Lectures.PageObjectLesson;
 
 import PageObject.Saucedemo.LoginPage;
 import PageObject.Saucedemo.ProductPage;
