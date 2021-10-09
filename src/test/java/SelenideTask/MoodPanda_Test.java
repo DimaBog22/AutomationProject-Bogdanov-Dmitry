@@ -4,14 +4,9 @@ import Selenide.Moodpanda.*;
 import Selenide.BaseTestSelenide;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import properties.PropertyReader;
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class MoodPanda_Test extends BaseTestSelenide {
-
-    PropertyReader appProperties = new PropertyReader("config/config.properties");
-    String link = appProperties.getProperties().getProperty("moodPandaUrl");
 
     @Test
     public void verifyHomePage_Test() {

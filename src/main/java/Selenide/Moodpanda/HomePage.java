@@ -1,12 +1,13 @@
 package Selenide.Moodpanda;
 
+import Selenide.BasePage;
 import Selenide.BaseTestSelenide;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class HomePage extends BaseTestSelenide {
+public class HomePage extends BasePage {
 
     @FindBy(css = ".scroll-down > a")
     SelenideElement scrollDownBtn;
