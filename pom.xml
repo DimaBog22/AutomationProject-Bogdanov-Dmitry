@@ -23,7 +23,6 @@
         <restAssured.version>4.4.0</restAssured.version>
         <mysqlConnectorJava.version>8.0.26</mysqlConnectorJava.version>
         <selenide.version>5.25.0</selenide.version>
-        <suiteXmlFile.name>src/main/resources/testRunners.task_16/task_16Executor.xml</suiteXmlFile.name>
     </properties>
 
     <build>
@@ -33,9 +32,6 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
-                    <suiteXmlFiles>
-                        <suiteXmlFile>${suiteXmlFile.name}</suiteXmlFile>
-                    </suiteXmlFiles>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/1.9.6/aspectjweaver-1.9.6.jar
                         -Xmx256m
